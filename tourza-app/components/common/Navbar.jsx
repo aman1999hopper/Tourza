@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import ModeToggle from "./ModeToggle";
 
 export default function Navbar({ role }) {
   return (
@@ -24,6 +25,7 @@ export default function Navbar({ role }) {
 
         {/* Right Actions */}
         <div className="flex gap-3">
+           <ModeToggle />
           <Button variant="outline">Login</Button>
           <Button>Sign Up</Button>
         </div>
