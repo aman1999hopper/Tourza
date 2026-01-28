@@ -31,7 +31,7 @@ export default function Home() {
           {/* RIGHT SIDE – IMAGE */}
           <div className="relative w-full h-[400px] md:h-[500px]">
             <Image
-              src="/images/hero.png"
+              src="/images/logo.png"
               alt="Travel illustration"
               fill
               className="object-contain"
