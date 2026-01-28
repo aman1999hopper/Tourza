@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Navbar({ role }) {
   return (
-    <nav className="w-full border-b sticky top-0 z-50">
+    <nav className="w-full border-b sticky top-0 z-50 bg-muted/50 backdrop-blur">
       <div className="flex h-16 items-center justify-between px-6">
         
         {/* Logo */}
