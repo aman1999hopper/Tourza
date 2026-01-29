@@ -1,5 +1,5 @@
-import Navbar from "@/components/common/Navbar";
-import Sidebar from "@/components/common/Sidebar";
+import Navbar from "../../components/common/Navbar";
+import Sidebar from "../../components/common/Sidebar";
 
 export default function AgentLayout({ children }) {
   return (

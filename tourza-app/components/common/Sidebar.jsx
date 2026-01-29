@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { SIDEBAR_MENU } from "@/lib/sidebar-menu";
+import { SIDEBAR_MENU } from "../../lib/sidebar-menu";
 
 export default function Sidebar({ role }) {
   const pathname = usePathname();

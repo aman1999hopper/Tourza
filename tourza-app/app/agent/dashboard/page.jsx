@@ -1,4 +1,4 @@
-import StatsCard from "@/components/agent/StatsCard";
+import StatsCard from "../../../components/agent/StatsCard";
 import { Wallet } from "lucide-react";
 
 export default function AgentDashboard() {
@@ -12,7 +12,6 @@ export default function AgentDashboard() {
           title="Total Bookings"
           value="1,248"
           description="All time bookings"
-          icon={Wallet}
         />
 
         <StatsCard

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "../../components/ui/button";
 import ModeToggle from "./ModeToggle";
 
 export default function Navbar({ role }) {
