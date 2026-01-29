@@ -9,7 +9,7 @@ export default function Sidebar({ role }) {
   const menu = SIDEBAR_MENU[role] || [];
 
   return (
-    <aside className="w-64 min-h-screen border-r bg-gray-50 px-4 py-6">
+    <aside className="w-64 min-h-screen border-r  px-4 py-6">
       <h2 className="mb-6 text-lg font-semibold">
         {role} PANEL
       </h2>
@@ -24,7 +24,7 @@ export default function Sidebar({ role }) {
               key={item.href}
               href={item.href}
               className={`flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition
-                ${active ? "bg-blue-600 text-white" : "hover:bg-gray-200"}
+                ${active ? "bg-blue-600 text-white" : "hover:bg-gray-600"}
               `}
             >
               <Icon size={18} />
