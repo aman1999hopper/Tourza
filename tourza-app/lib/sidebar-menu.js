@@ -14,6 +14,9 @@ export const SIDEBAR_MENU = {
     { label: "Wallet", href: "/agent/wallet", icon: Wallet },
     { label: "Bookings", href: "/agent/bookings", icon: Briefcase },
     { label: "Invoices", href: "/agent/invoices", icon: FileText },
+    { label: "Clients", href: "/agent/clients", icon: Users },
+    { label: "Analytics", href: "/agent/analytics", icon: BarChart },
+    { label: "Compliance", href: "/agent/compliance", icon: ShieldCheck },
   ],
 
   CORPORATE: [
