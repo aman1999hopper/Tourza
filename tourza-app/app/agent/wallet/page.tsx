@@ -1,3 +1,9 @@
+import WalletTransactions from "../../../components/agent/WalletTransactions";
+
 export default function WalletPage() {
-    return <div>Agent Wallet Page</div>;
+    return (
+        <div>
+            <WalletTransactions />
+        </div>
+    )
 }

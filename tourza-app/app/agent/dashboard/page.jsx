@@ -1,3 +1,4 @@
+import WalletTransactions from "../../../components/agent/WalletTransactions";
 import RecentBookingsTable from "../../../components/agent/RecentBookingsTable";
 import StatsCard from "../../../components/agent/StatsCard";
 import { ClipboardList, PoundSterling, Wallet } from "lucide-react";
@@ -41,6 +42,9 @@ export default function AgentDashboard() {
       {/* Recent Booking Table */}
 
       <RecentBookingsTable />
+
+      {/* Wallet Transctions */}
+      <WalletTransactions/>
     </div>
   );
 }
