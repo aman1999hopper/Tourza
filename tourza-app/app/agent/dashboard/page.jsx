@@ -1,3 +1,4 @@
+import RecentBookingsTable from "../../../components/agent/RecentBookingsTable";
 import StatsCard from "../../../components/agent/StatsCard";
 import { ClipboardList, PoundSterling, Wallet } from "lucide-react";
 
@@ -36,6 +37,10 @@ export default function AgentDashboard() {
           icon={ClipboardList}
         />
       </div>
+
+      {/* Recent Booking Table */}
+
+      <RecentBookingsTable />
     </div>
   );
 }
