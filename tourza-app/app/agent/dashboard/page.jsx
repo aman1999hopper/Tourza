@@ -1,5 +1,5 @@
 import StatsCard from "../../../components/agent/StatsCard";
-import { Wallet } from "lucide-react";
+import { ClipboardList, PoundSterling, Wallet } from "lucide-react";
 
 export default function AgentDashboard() {
   return (
@@ -12,24 +12,28 @@ export default function AgentDashboard() {
           title="Total Bookings"
           value="1,248"
           description="All time bookings"
+          icon={ClipboardList}
         />
 
         <StatsCard
           title="Wallet Balance"
           value="₹ 82,450"
           description="Available balance"
+          icon={Wallet}
         />
 
         <StatsCard
           title="Monthly Revenue"
           value="₹ 3.2L"
           description="This month"
+          icon={PoundSterling}
         />
 
         <StatsCard
           title="Pending Tickets"
           value="12"
           description="Need action"
+          icon={ClipboardList}
         />
       </div>
     </div>
