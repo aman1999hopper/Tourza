@@ -18,6 +18,7 @@ import {
 import { Button } from "../../components/ui/button";
 import { MoreHorizontal, Eye, FileText, XCircle } from "lucide-react";
 import BookingDetailsModal from "../../components/agent/BookingDetailsModal";
+import { generateInvoice } from "../../lib/generateInvoice";
 
 const recentBookings = [
   {
@@ -123,7 +124,7 @@ export default function RecentBookingsTable() {
                       View Details
                     </DropdownMenuItem>
 
-                    <DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => generateInvoice(booking)}>
                       <FileText className="mr-2 h-4 w-4" />
                       Download Invoice
                     </DropdownMenuItem>
