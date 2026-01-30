@@ -1,5 +1,5 @@
 "use client";
-
+import { useState } from "react";
 import {
   Table,
   TableBody,
@@ -16,12 +16,8 @@ import {
   DropdownMenuTrigger,
 } from "../../components/ui/dropdown-menu";
 import { Button } from "../../components/ui/button";
-import {
-  MoreHorizontal,
-  Eye,
-  FileText,
-  XCircle,
-} from "lucide-react";
+import { MoreHorizontal, Eye, FileText, XCircle } from "lucide-react";
+import BookingDetailsModal from "../../components/agent/BookingDetailsModal";
 
 const recentBookings = [
   {
@@ -64,6 +60,8 @@ export default function RecentBookingsTable() {
     if (status === "Pending") return "warning";
     return "destructive";
   };
+  const [selectedBooking, setSelectedBooking] = useState(null);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="rounded-xl border bg-white dark:bg-background">
@@ -92,9 +90,7 @@ export default function RecentBookingsTable() {
         <TableBody>
           {recentBookings.map((booking) => (
             <TableRow key={booking.id}>
-              <TableCell className="font-medium">
-                {booking.id}
-              </TableCell>
+              <TableCell className="font-medium">{booking.id}</TableCell>
               <TableCell>{booking.customer}</TableCell>
               <TableCell>{booking.route}</TableCell>
               <TableCell>{booking.date}</TableCell>
@@ -117,7 +113,12 @@ export default function RecentBookingsTable() {
                   </DropdownMenuTrigger>
 
                   <DropdownMenuContent align="end">
-                    <DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => {
+                        setSelectedBooking(booking);
+                        setOpen(true);
+                      }}
+                    >
                       <Eye className="mr-2 h-4 w-4" />
                       View Details
                     </DropdownMenuItem>
@@ -138,6 +139,13 @@ export default function RecentBookingsTable() {
           ))}
         </TableBody>
       </Table>
+
+      {/* Booking Details Modal */}
+      <BookingDetailsModal
+        open={open}
+        onClose={() => setOpen(false)}
+        booking={selectedBooking}
+      />
     </div>
   );
 }

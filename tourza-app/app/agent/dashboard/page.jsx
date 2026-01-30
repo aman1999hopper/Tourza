@@ -2,6 +2,7 @@ import WalletTransactions from "../../../components/agent/WalletTransactions";
 import RecentBookingsTable from "../../../components/agent/RecentBookingsTable";
 import StatsCard from "../../../components/agent/StatsCard";
 import { ClipboardList, PoundSterling, Wallet } from "lucide-react";
+import BookingDetailsModal from "../../../components/agent/BookingDetailsModal";
 
 export default function AgentDashboard() {
   return (
@@ -44,7 +45,11 @@ export default function AgentDashboard() {
       <RecentBookingsTable />
 
       {/* Wallet Transctions */}
-      <WalletTransactions/>
+      <WalletTransactions />
+
+      {/* Bookings detail model */}
+      <BookingDetailsModal
+      />
     </div>
   );
 }
