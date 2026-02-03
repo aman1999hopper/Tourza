@@ -19,6 +19,7 @@ import { Button } from "../../components/ui/button";
 import { MoreHorizontal, Eye, FileText, XCircle } from "lucide-react";
 import BookingDetailsModal from "../../components/agent/BookingDetailsModal";
 import { generateInvoice } from "../../lib/generateInvoice";
+import CancelBookingDialog from "../../components/agent/CancelBookingDialog";
 
 const recentBookings = [
   {
@@ -63,6 +64,14 @@ export default function RecentBookingsTable() {
   };
   const [selectedBooking, setSelectedBooking] = useState(null);
   const [open, setOpen] = useState(false);
+  const [cancelOpen, setCancelOpen] = useState(false);
+  const [bookingToCancel, setBookingToCancel] = useState(null);
+
+  const handleCancelBooking = (booking) => {
+    console.log("Booking cancelled:", booking.id);
+    setCancelOpen(false);
+    setBookingToCancel(null);
+  };
 
   return (
     <div className="rounded-xl border bg-white dark:bg-background">
@@ -129,7 +138,13 @@ export default function RecentBookingsTable() {
                       Download Invoice
                     </DropdownMenuItem>
 
-                    <DropdownMenuItem className="text-red-600">
+                    <DropdownMenuItem
+                      className="text-red-600"
+                      onClick={() => {
+                        setBookingToCancel(booking);
+                        setCancelOpen(true);
+                      }}
+                    >
                       <XCircle className="mr-2 h-4 w-4" />
                       Cancel Booking
                     </DropdownMenuItem>
@@ -146,6 +161,14 @@ export default function RecentBookingsTable() {
         open={open}
         onClose={() => setOpen(false)}
         booking={selectedBooking}
+      />
+
+      {/* 🔥 CANCEL BOOKING DIALOG */}
+      <CancelBookingDialog
+        open={cancelOpen}
+        onClose={setCancelOpen}
+        booking={bookingToCancel}
+        onConfirm={handleCancelBooking}
       />
     </div>
   );
